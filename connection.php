@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "avito_database";
+$dbname = "avito2_database";
 $table_annonces = "annonces";
 $table_users= "users";
 
@@ -36,23 +36,29 @@ $conn->select_db($dbname);
 /**
  * create a table
  */
-$sql = "CREATE TABLE IF NOT EXISTS $table_annonces (
+
+ $sql2 = "CREATE TABLE IF NOT EXISTS $table_users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fullname VARCHAR(30) NOT NULL,
+    phone VARCHAR(30) NOT NULL,
+    role VARCHAR(30) NOT NULL,
+    email VARCHAR(30) NOT NULL,
+    password VARCHAR(30) NOT NULL
+)";
+
+$sql1 = "CREATE TABLE IF NOT EXISTS $table_annonces (
     id INT AUTO_INCREMENT PRIMARY KEY,
     fullname VARCHAR(30) NOT NULL,
     phonenumber VARCHAR(20) NOT NULL,
     title VARCHAR(30) NOT NULL,
     about TEXT NOT NULL,
     price INT NOT NULL,
-    img TEXT NOT NULL
-)
-CREATE TABLE IF NOT EXISTS $table_users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    fullname VARCHAR(30) NOT NULL,
-    email VARCHAR(30) NOT NULL,
-    password VARCHAR(30) NOT NULL,
+    img TEXT NOT NULL,
+    id_user INT NOT NULL,
+    FOREIGN KEY (id_user) REFERENCES users(id)
 )";
 
-if (!$conn->query($sql) === TRUE) {
+if (!$conn->query($sql2) || !$conn->query($sql1)) {
     echo "Error creating table: " . $conn->error;
 }
 
