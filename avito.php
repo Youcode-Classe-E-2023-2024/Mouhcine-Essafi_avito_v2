@@ -18,7 +18,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
       <?php
           include("connection.php");
-          $selectSql = "SELECT * FROM $table_annonces";
+          $selectSql = "SELECT * FROM annonces";
           $result = $conn->query($selectSql);
 
           if ($result->num_rows > 0) {
