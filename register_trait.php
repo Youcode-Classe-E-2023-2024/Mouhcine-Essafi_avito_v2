@@ -7,7 +7,7 @@ if(isset($_POST['submit'])){
    $name = $_POST['fullname'];
    $email = $_POST['email'];
    $phone = $_POST['phone'];
-   $pass = $_POST['password']; 
+   $pass = password_hash($_POST['password'], PASSWORD_DEFAULT);        
    $user_type = $_POST['role'];
 
    $select = " SELECT * FROM $table_users WHERE email = '$email' ";
