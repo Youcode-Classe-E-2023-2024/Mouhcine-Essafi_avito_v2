@@ -42,8 +42,8 @@ $conn->select_db($dbname);
     fullname VARCHAR(30) NOT NULL,
     phone VARCHAR(30) NOT NULL,
     role VARCHAR(30) NOT NULL,
-    email VARCHAR(30) NOT NULL,
-    password VARCHAR(30) NOT NULL
+    email VARCHAR(50) NOT NULL,
+    password VARCHAR(100) NOT NULL
 )";
 
 $sql1 = "CREATE TABLE IF NOT EXISTS $table_annonces (
