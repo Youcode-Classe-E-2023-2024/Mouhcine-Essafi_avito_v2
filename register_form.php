@@ -20,7 +20,7 @@
 			<input class="input" name="email" type="email" placeholder="Email" />
 			<input class="input" name="password" type="password" placeholder="Password" />
          <select class="input" id="gender" name="role">
-            <option value="viewer">Viewer</option>
+            <option value="Viewer">Viewer</option>
             <option value="Annoncer">Announcer</option>
          </select>
 			<button name="submit" type="submit">Sign Up</button>
