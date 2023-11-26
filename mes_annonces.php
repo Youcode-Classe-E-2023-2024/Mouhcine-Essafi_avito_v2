@@ -22,7 +22,6 @@
           include("connection.php");
           session_start();
           $id_user = $_SESSION['Announcer_id'];
-          print_r($id_user);
           $selectSql = "SELECT * FROM $table_annonces WHERE id_user = '$id_user' ";
           $result = $conn->query($selectSql);
 
