@@ -49,7 +49,7 @@ $conn->select_db($dbname);
 $sql1 = "CREATE TABLE IF NOT EXISTS $table_annonces (
     id INT AUTO_INCREMENT PRIMARY KEY,
     fullname VARCHAR(30) NOT NULL,
-    phonenumber VARCHAR(20) NOT NULL,
+    phonenumber VARCHAR(30) NOT NULL,
     title VARCHAR(30) NOT NULL,
     about TEXT NOT NULL,
     price INT NOT NULL,
