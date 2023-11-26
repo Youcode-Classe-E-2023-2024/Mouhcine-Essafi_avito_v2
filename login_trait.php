@@ -20,7 +20,9 @@ if (isset($_POST['submit'])) {
         if (password_verify($CheckPass, $row['password'])) {
 
             if ($row['role'] == 'Annoncer') {
-                $_SESSION['Announcer_name'] = $row['id'];
+                $_SESSION['Announcer_id'] = $row['id'];
+                $_SESSION['Announcer_name'] = $row['fullname'];
+                $_SESSION['Announcer_phone'] = $row['phone'];
                 header('location: Annoncer.php');
             } elseif ($row['role'] == 'Viewer') {
                 $_SESSION['Viewer_name'] = $row['id'];
@@ -28,9 +30,11 @@ if (isset($_POST['submit'])) {
             }
         } else {
             echo ' 1 Incorrect email or password!';
+            header('location: register_form.php');
         }
     } else {
         echo '2Incorrect email or password!';
+        header('location: register_form.php');
     }
 }
 $conn->close();
