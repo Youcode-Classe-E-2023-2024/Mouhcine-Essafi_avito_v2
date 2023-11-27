@@ -16,11 +16,11 @@
     <?php include("navbar.php"); ?>
 
     <!-- Content -->
-    <div class="content flex flex-col items-center m-24 w-fit">
+    <div class="content flex flex-col items-center justify-center">
         <h2 class="text-2xl font-semibold mb-4">Liste des users</h2>
 
-        <div class="overflow-x-auto w-full">
-            <table class="w-full bg-white shadow-md rounded-md overflow-hidden">
+        <div class="overflow-x-auto w-full flex items-center justify-center">
+            <table class="w-4/5 bg-white shadow-md rounded-md overflow-hidden">
                 <thead>
                     <tr>
                         <th class="py-2 px-4 border-b text-white bg-gray-800">ID</th>
