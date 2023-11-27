@@ -41,7 +41,8 @@
                   /**
                    * link to delete the announce
                    */
-                  echo "<a href='supprimer.php?id=" . $row["id"] . "' class='text-red-500 hover:underline'>Supprimer</a>";
+                  echo "<a href='supprimer.php?id=" . $row["id"] . "' class='text-red-500 hover:underline'>Delete</a>";
+                  echo "<a href='modifier.php?id=" . $row["id"] . "' class='text-red-500 hover:underline'>Edit</a>";
                   echo "</div>";
                   echo "</div>";
               }
