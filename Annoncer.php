@@ -8,12 +8,9 @@
 </head>
 <body class="font-sans bg-gray-100">
 
-  <div class="bg-blue-800 p-4 fixed w-full animate-pulse flex justify-end z-10">
-    <a href="mes_annonces.php" class="text-white ">mes annonces</a>
-    <a href="add_annonce.php" class="text-white ">Ajouter une annonce</a>
-    <a href="logout.php" class="text-white ">Log out</a>
-    <a href="edit_profile.php" class="text-white ">edit profile</a>
-  </div>
+    <!-- Navbar -->
+
+    <?php include("navbar.php"); ?>
 
   <div class="p-16">
     <h2 class="text-3xl font-bold mb-8 text-green-500">La liste des Annonces</h2>
@@ -21,7 +18,6 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
       <?php
           include("connection.php");
-          session_start();
           $selectSql = "SELECT * FROM $table_annonces";
           $result = $conn->query($selectSql);
 
