@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
             } elseif ($row['role'] == 'admin') {
                 $_SESSION['user_type'] = $row['role'];
                 print_r($row['role']);
-                header('location: admin/list_user.php');
+                header('location: list_user.php');
             }
         } else {
             echo ' 1 Incorrect email or password!';
