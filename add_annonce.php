@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <title>Avito.ma</title>
 </head>
-<body>
+<body class="flex justify-center">
 
         <style>
           /* Hide the number input arrows */
@@ -15,7 +15,7 @@
           }
         </style>
 
-<form class="ml-64 mr-64 mt-12 mb-12" method="POST" action="insert.php" enctype="multipart/form-data">
+<form class="w-2/4 bg-slate-500 " method="POST" action="insert.php" enctype="multipart/form-data">
   <div class="space-y-12">
     <div class="border-b border-gray-900/10 pb-12">
       <h2 class="text-2xl font-semibold leading-7 text-gray-900 mt-8">Announcement Information</h2>
