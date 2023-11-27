@@ -30,9 +30,10 @@ if (isset($_POST['submit'])) {
                 $_SESSION['Viewer_name'] = $row['id'];
                 header('location: Viewer.php');
             } elseif ($row['role'] == 'admin') {
+                $_SESSION['Announcer_name'] = $row['fullname'];
+                $_SESSION['Announcer_phone'] = $row['phone'];
                 $_SESSION['user_type'] = $row['role'];
-                print_r($row['role']);
-                header('location: list_user.php');
+                header('location: Annoncer.php');
             }
         } else {
             echo ' 1 Incorrect email or password!';
