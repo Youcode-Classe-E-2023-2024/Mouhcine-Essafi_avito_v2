@@ -20,13 +20,19 @@ if (isset($_POST['submit'])) {
         if (password_verify($CheckPass, $row['password'])) {
 
             if ($row['role'] == 'Annoncer') {
+                $_SESSION['user_type'] = $row['role'];
                 $_SESSION['Announcer_id'] = $row['id'];
                 $_SESSION['Announcer_name'] = $row['fullname'];
                 $_SESSION['Announcer_phone'] = $row['phone'];
                 header('location: Annoncer.php');
             } elseif ($row['role'] == 'Viewer') {
+                $_SESSION['user_type'] = $row['role'];
                 $_SESSION['Viewer_name'] = $row['id'];
                 header('location: Viewer.php');
+            } elseif ($row['role'] == 'admin') {
+                $_SESSION['user_type'] = $row['role'];
+                print_r($row['role']);
+                header('location: admin/list_user.php');
             }
         } else {
             echo ' 1 Incorrect email or password!';
