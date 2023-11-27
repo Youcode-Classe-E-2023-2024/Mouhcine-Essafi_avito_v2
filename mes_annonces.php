@@ -9,8 +9,9 @@
 <body class="font-sans bg-gray-100">
 
   <div class="bg-blue-800 p-4 fixed w-full animate-pulse flex justify-end z-10">
-  <a href="mes_annonces.php" class="text-white ">mes annonces</a>
+  <a href="Annoncer.php" class="text-white ">Home</a>
     <a href="add_annonce.php" class="text-white ">Ajouter une annonce</a>
+    <a href="edit_profile.php" class="text-white ">edit profile</a>
     <a href="logout.php" class="text-white ">Log out</a>
   </div>
 
