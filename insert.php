@@ -9,8 +9,8 @@ if (isset($_POST['submit'])) {
      * Get form data
      */
     session_start();
-    $phone_number = $_SESSION['Announcer_phone'];
-    $full_name = $_SESSION['Announcer_name'];
+    $phone_number = $_SESSION['session_phone'];
+    $full_name = $_SESSION['session_name'];
     $title = $_POST["title"];
     $about = $_POST["about"];
     $price = $_POST["price"];
