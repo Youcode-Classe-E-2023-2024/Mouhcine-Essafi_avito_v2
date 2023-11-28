@@ -22,16 +22,16 @@ if (isset($_POST['submit'])) {
             if ($row['role'] == 'Annoncer') {
                 $_SESSION['user_type'] = $row['role'];
                 $_SESSION['session_id'] = $row['id'];
-                $_SESSION['Announcer_name'] = $row['fullname'];
-                $_SESSION['Announcer_phone'] = $row['phone'];
+                $_SESSION['session_name'] = $row['fullname'];
+                $_SESSION['session_phone'] = $row['phone'];
                 header('location: Annoncer.php');
             } elseif ($row['role'] == 'Viewer') {
                 $_SESSION['user_type'] = $row['role'];
                 $_SESSION['Viewer_name'] = $row['id'];
                 header('location: Viewer.php');
             } elseif ($row['role'] == 'admin') {
-                $_SESSION['Announcer_name'] = $row['fullname'];
-                $_SESSION['Announcer_phone'] = $row['phone'];
+                $_SESSION['session_name'] = $row['fullname'];
+                $_SESSION['session_phone'] = $row['phone'];
                 $_SESSION['user_type'] = $row['role'];
                 $_SESSION['session_id'] = $row['id'];
                 header('location: Annoncer.php');
