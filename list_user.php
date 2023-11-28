@@ -41,16 +41,17 @@
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
                             echo "<tr class='hover:bg-gray-100 transition-all'>";
-                            echo "<td class='py-2 px-4 border-b text-gray-700'>" . $row["id"] . "</td>";
-                            echo "<td class='py-2 px-4 border-b text-gray-700'>" . $row["fullname"] . "</td>";
-                            echo "<td class='py-2 px-4 border-b text-gray-700'>" . $row["phone"] . "</td>";
-                            echo "<td class='py-2 px-4 border-b text-gray-700'>" . $row["role"] . "</td>";
-                            echo "<td class='py-2 px-4 border-b text-gray-700'>" . $row["email"] . "</td>";
-                            echo "<td class='py-2  border-b space-x-2'>";
-                            echo "<button class='bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded transition-all'>Éditer</button>";
-                            echo "<button class='bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded transition-all'>Supprimer</button>";
-                            echo "</td>";
-                            echo "</tr>";
+echo "<td class='py-2 px-4 border-b text-gray-700'><a href='mes_annonces.php?id=" . $row["id"] . "'>" . $row["id"] . "</a></td>";
+echo "<td class='py-2 px-4 border-b text-gray-700'>" . $row["fullname"] . "</td>";
+echo "<td class='py-2 px-4 border-b text-gray-700'>" . $row["phone"] . "</td>";
+echo "<td class='py-2 px-4 border-b text-gray-700'>" . $row["role"] . "</td>";
+echo "<td class='py-2 px-4 border-b text-gray-700'>" . $row["email"] . "</td>";
+echo "<td class='py-2 border-b space-x-2'>";
+echo "<button class='bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded transition-all'>Éditer</button>";
+echo "<button class='bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded transition-all'>Supprimer</button>";
+echo "</td>";
+echo "</tr>";
+
                         }
                     } else {
                         echo "<tr><td colspan='6'>Aucun utilisateur trouvé</td></tr>";
