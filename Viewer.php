@@ -8,9 +8,7 @@
 </head>
 <body class="font-sans bg-gray-100">
 
-  <div class="bg-blue-800 p-4 fixed w-full animate-pulse flex justify-end z-10">
-    <a href="logout.php" class="text-white ">Log out</a>
-  </div>
+    <?php include("navbar.php"); ?>
 
   <div class="p-16">
     <h2 class="text-3xl font-bold mb-8 text-green-500">La liste des Annonces</h2>
@@ -18,6 +16,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
       <?php
           include("connection.php");
+
           $selectSql = "SELECT * FROM $table_annonces";
           $result = $conn->query($selectSql);
 
