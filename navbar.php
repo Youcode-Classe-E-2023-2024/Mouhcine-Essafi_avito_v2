@@ -37,7 +37,7 @@ session_start();
         <a href="list_user.php" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"><?php if($_SESSION['user_type'] == 'admin'){echo "all users";}  ?></a>
       </li>
       <li>
-        <a href="mes_annonces.php" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 d:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"><?php if($_SESSION['user_type'] == 'Annoncer'){echo "Mes annonces";}  ?></a>
+        <a href="mes_annonces.php" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 d:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"><?php if($_SESSION['user_type'] == 'Annoncer' || $_SESSION['user_type'] == 'admin'){echo "Mes annonces";}  ?></a>
       </li>
       <li>
         <a href="add_annonce.php" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"><?php if($_SESSION['user_type'] == 'Annoncer' || $_SESSION['user_type'] == 'admin'){echo "Ajouter une annonce";} ?></a>
