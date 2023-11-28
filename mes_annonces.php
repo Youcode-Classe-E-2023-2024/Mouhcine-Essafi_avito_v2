@@ -17,7 +17,11 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
       <?php
           include("connection.php");
-          $id_user = $_SESSION['Announcer_id'];
+          if(isset($_GET['id'])){
+            $id_user = $_GET['id'];
+          }else{
+            $id_user = $_SESSION['session_id'];
+          }
           $selectSql = "SELECT * FROM $table_annonces WHERE id_user = '$id_user' ";
           $result = $conn->query($selectSql);
 
@@ -37,8 +41,14 @@
                   /**
                    * link to delete the announce
                    */
-                  echo "<a href='supprimer.php?id=" . $row["id"] . "' class='text-red-500 hover:underline'>Delete</a>";
-                  echo "<a href='modifier.php?id=" . $row["id"] . "' class='text-red-500 hover:underline'>Edit</a>";
+                  echo "<a href='supprimer.php?id=" . $row["id"] . "' class='text-red-500 hover:underline'>";
+                  echo "<button class='bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded transition-all'>Supprimer</button>";
+                  echo "</a>";
+                
+                  echo "<a href='modifier.php?id=" . $row["id"] . "' class='text-red-500 hover:underline'>";
+                  echo "<button class='bg-green-800 hover:bg-red-700 text-white py-1 px-2 rounded transition-all'>Modifier</button>";
+                  echo "</a>";
+
                   echo "</div>";
                   echo "</div>";
               }
