@@ -55,7 +55,7 @@ $sql1 = "CREATE TABLE IF NOT EXISTS $table_annonces (
     price INT NOT NULL,
     img TEXT NOT NULL,
     id_user INT NOT NULL,
-    FOREIGN KEY (id_user) REFERENCES users(id)
+    FOREIGN KEY (id_user) REFERENCES users(id) ON DELETE CASCADE
 )";
 
 if (!$conn->query($sql2) || !$conn->query($sql1)) {
