@@ -16,7 +16,7 @@ if (isset($_POST['submit'])) {
     $price = $_POST["price"];
     $img_name = $_FILES["img"]["name"];
     $img_tmp = $_FILES["img"]["tmp_name"];
-    $id_user = $_SESSION['Announcer_id'];
+    $id_user = $_SESSION['session_id'];
    
     /**
      * uploaded image to the specified directory
