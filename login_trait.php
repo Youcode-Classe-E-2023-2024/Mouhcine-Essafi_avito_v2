@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
 
             if ($row['role'] == 'Annoncer') {
                 $_SESSION['user_type'] = $row['role'];
-                $_SESSION['Announcer_id'] = $row['id'];
+                $_SESSION['session_id'] = $row['id'];
                 $_SESSION['Announcer_name'] = $row['fullname'];
                 $_SESSION['Announcer_phone'] = $row['phone'];
                 header('location: Annoncer.php');
@@ -33,6 +33,7 @@ if (isset($_POST['submit'])) {
                 $_SESSION['Announcer_name'] = $row['fullname'];
                 $_SESSION['Announcer_phone'] = $row['phone'];
                 $_SESSION['user_type'] = $row['role'];
+                $_SESSION['session_id'] = $row['id'];
                 header('location: Annoncer.php');
             }
         } else {
