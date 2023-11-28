@@ -15,7 +15,7 @@ $sql = "DELETE FROM $table_annonces WHERE id = $id";
 $res = $conn->query($sql);
 
 if ($res) {
-    header("Location: avito.php");
+    header("Location: mes_annonces.php");
     exit();
 } else {
     echo "Erreur lors de l'exécution de la requête !";
