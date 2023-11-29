@@ -11,7 +11,7 @@ include_once ("connection.php");
     $res = mysqli_query($conn, $sql);
 
     if ($res) {
-        header("Location: Annoncer.php");
+        header("Location: mes_annonces.php");
         exit();
     }
 
