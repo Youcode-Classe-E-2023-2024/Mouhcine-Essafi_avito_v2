@@ -5,7 +5,6 @@ if(!$_SESSION['session_name']){
 }
 ?>
 
-
 <nav class="bg-white w-full border-gray-200 dark:bg-gray-900">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
   <a href="Annoncer.php" class="flex items-center space-x-3 rtl:space-x-reverse">
