@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+// Check if the user is logged in
 if(!$_SESSION['session_name']){
    header('location: register_form.php');
 }
@@ -34,9 +36,9 @@ if(!$_SESSION['session_name']){
       <li>
         <a href="add_annonce.php" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"><?php if($_SESSION['user_type'] == 'Annoncer' || $_SESSION['user_type'] == 'admin'){echo "Ajouter une annonce";} ?></a>
       </li>
-      <!-- <li>
+      <li>
         <a href="edit_profile.php" class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">edit profile</a>
-      </li> -->
+      </li>
     </ul>
   </div>
   </div>
