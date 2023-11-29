@@ -1,3 +1,14 @@
+<?php
+
+include("connection.php");
+
+if (isset($_POST['submit'])) {
+    $id_delete = $_POST['id_delete'];
+
+    $delete_query = "DELETE FROM $table_users WHERE id = $id_delete";
+    $delete_result = mysqli_query($conn, $delete_query);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +27,7 @@
     <?php include("navbar.php"); ?>
 
     <!-- Content -->
-    <div class="content flex flex-col items-center justify-center">
+    <div class="content flex flex-col mt-16 items-center justify-center">
         <h2 class="text-2xl font-semibold mb-4">Liste des users</h2>
 
         <div class="overflow-x-auto w-full flex items-center justify-center">
@@ -33,7 +44,6 @@
                 </thead>
                 <tbody>
                     <?php
-                    include("connection.php");
 
                     $selectSql = "SELECT * FROM $table_users WHERE id != 0 ";
                     $result = $conn->query($selectSql);
@@ -46,9 +56,15 @@
                             echo "<td class='py-2 px-4 border-b text-gray-700'>" . $row["phone"] . "</td>";
                             echo "<td class='py-2 px-4 border-b text-gray-700'>" . $row["role"] . "</td>";
                             echo "<td class='py-2 px-4 border-b text-gray-700'>" . $row["email"] . "</td>";
-                            echo "<td class='py-2 border-b space-x-2'>";
+                            echo "<td class='py-2 flex border-b space-x-2'>";
                             echo "<button class='bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded transition-all'>Éditer</button>";
-                            echo "<button class='bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded transition-all'>Supprimer</button>";
+                            // echo "<button class='bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded transition-all'>Supprimer</button>";
+                            echo "</select>
+                            </div>
+                            <form method='post' action='list_user.php'>
+                                <input type='hidden' name='id_delete' value='" . $row["id"] . "'>
+                                <button type='submit' name='submit' class='bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded transition-all'>Supprimer</button>
+                            </form>";
                             echo "</td>";
                             echo "</tr>";
                         }
@@ -56,7 +72,7 @@
                         echo "<tr><td colspan='6'>Aucun utilisateur trouvé</td></tr>";
                     }
 
-                    $conn->close();
+                    // $conn->close();
                     ?>
                 </tbody>
             </table>
